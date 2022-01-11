@@ -45,11 +45,28 @@ Git Bash
 
 Git can be used from a number of different interfaces or "frontends". For example, many popular text editors and IDEs like RStudio, VSCode, and PyCharm come with built-in Git/GitHub support.
 
-While you are welcome and encouraged to use these tools as you see fit, for consistency's sake, this tutorial will use Git's "backend", which is included with every installation of Git: the command line.
+While you are welcome and encouraged to use these tools as you see fit, for consistency's sake, this tutorial will use Git's "backend", which is included with every installation of Git: the command line interface.
 
-The command line interface can be accessed by clicking on the start menu and typing "Git Bash" into the search bar.
+The command line interface can be accessed by clicking on the start menu and typing **Git Bash** into the search bar.
 
 ![startmenu](img/startmenu.png)
+
+## Git Bash {.smaller}
+
+Git Bash is a way of interacting with your computer by typing in commands or the names of programs, rather than clicking around the desktop. Most of the commands we will use today begin with the word `git`, but there are a number of other commands that you may find useful from time to time:
+
+- `cd` - short for "**c**hange **d**irectory", is used to navigate folders by name. For example, try typing `cd Documents` into Git Bash, then hit enter. This will navigate to your Windows Documents folder.
+- `pwd` - short for "**p**rint **w**hich **d**irectory", tells you the name of the folder in which Git Bash is currently opened. For example, if you ran the `cd` example above to navigate to your Windows Documents folder, entering in `pwd` will show the full path to the folder:
+  ```sh
+  /c/Users/[YOUR.NAME]/Documents
+  ```
+- `mkdir` - short for "**m**a**k**e **dir**ectory", creates a new folder within the current folder:
+  ```sh
+  mkdir my_folder
+  ```
+- `ls` - short for "**l**i**s**t", shows you all of the files and folders within the current directory.
+
+![gitbashnavigation](img/gitbashnavigation.png)
 
 Configuring Git {.smaller}
 ---------------
@@ -339,7 +356,7 @@ Here, there are two master branches: the original, created by Victor, and anothe
 Creating Pull Requests
 ----------------------
 
-Let's create our own Pull Request. First, we need to create a new branch by clicking on the icon in the top left of our GitHub repo labelled **main**. In the pop-up text menu, type the name of a new branch, e.g. **mybranch**, then click on the option **Create branch: my branch from 'main'**.
+Let's create our own Pull Request. First, we need to create a new branch by clicking on the icon in the top left of our GitHub repo labelled **main**. In the pop-up text menu, type the name of a new branch, e.g. **mybranch**, then click on the option **Create branch: mybranch from 'main'**.
 
 ![creategithubbranch](img/creategithubbranch.png)
 
