@@ -110,6 +110,32 @@ from time to time:
 
 ![gitbashnavigation](img/gitbashnavigation.png)
 
+-   `mv` - short for **m**o**v**e, is used to move or rename files and
+    folders:
+
+    ``` sh
+    mv chart.jpg line_chart.jpg 
+    mv /c/Users/[YOUR.NAME]/Documents/report.txt /c/Users[YOUR.NAME]/Pictures/
+    ```
+
+-   `rm` - short for **r**e**m**ove, deletes files and folders. ***Note
+    that this bypasses the Recycling Bin and permanently deletes the
+    file***
+
+    ``` sh
+    rm data.csv
+    ```
+
+-   `cp` - short for **c**opy and **p**aste, functions similarly to
+    `mv`, but the original file is left untouched:
+
+    ``` sh
+    cp line_chart.jpg line_chart_COPY.jpg 
+    cp /c/Users/[YOUR.NAME]/Documents/report.txt /c/Users[YOUR.NAME]/Pictures/
+    ```
+
+![gitbashfilemgmt](img/gitbashfilemgmt.png)
+
 ## Configuring Git
 
 Before we get started using Git we will need to run a few startup
