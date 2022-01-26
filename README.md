@@ -649,7 +649,7 @@ to delete **test**.
 
 **Congratulations! Not only have you successfully merged your first Pull
 Request, you have completed the DBI Git Tutorial!** If you haven’t done
-so already, please visit through the
+so already, please read through the
 [DallasDBI](https://github.com/DallasDBI/DallasDBI) repo for an in-depth
 overview of the DallasDBI GitHub Organization, as well as guidelines for
 DBI members using Git/GitHub.
