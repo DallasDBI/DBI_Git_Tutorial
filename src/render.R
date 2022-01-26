@@ -1,5 +1,4 @@
-# Helper script to render README and slide-deck versions of the tutorial
-here::i_am("README.md")
+# Helper script to render README and slide-deck versions of the tutorial here::i_am("README.md")
 
 library(here)
 library(rmarkdown)

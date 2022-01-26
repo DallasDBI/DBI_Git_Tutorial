@@ -75,7 +75,7 @@ Git Bash is a way of interacting with your computer by typing in commands or the
   mv chart.jpg line_chart.jpg 
   mv /c/Users/[YOUR.NAME]/Documents/report.txt /c/Users[YOUR.NAME]/Pictures/
   ```
-- `rm` - short for **r**e**m**ove, deletes files and folders. ***Note that this bypasses the Recycling Bin and permanently deletes the file***
+- `rm` - short for **r**e**m**ove, deletes files and folders. ***Note that this bypasses the Recycling Bin and permanently deletes the file.***
   ```sh
   rm data.csv
   ```
@@ -102,6 +102,14 @@ Next, we will need to set our default text editor, which we will use to write su
 
 ```sh
 git config --global core.editor notepad
+```
+
+## Configuring Git {.smaller}
+
+Finally, we will set up a default **branch** name. We will go over the concept of **branches** in more detail later on in the tutorial. As before, copy and paste the following line into Git Bash:
+
+```sh
+git config --global init.defaultBranch main
 ```
 
 Once you've run all of these commands, you can close out of Git Bash.
@@ -320,7 +328,7 @@ Luckily, synchronization can be achieved with a single command:
 git push origin
 ```
 
-This `git push` command is how we tell Git to synchronize our local repository with our remote repository. Here, `origin` refers to our GitHub repo, and is a "nickname" that GitHub chose for us by default when we first pushed our local repository, but we could have easily chosen a different name. It is also possible to have multiple remote copies, each with their own "nicknames", but that is outside of the scope of this tutorial.
+This `git push` command is how we tell Git to synchronize our local repository with our remote repository. Here, `origin` refers to our GitHub repo, and is a "nickname" that GitHub chose for us by default when we first pushed our local repository, but we could have easily chosen a different name. It is also possible to have multiple remote copies, each with their own "nicknames".
 
  ![](img/gitpushoriginnamecmd.png)
 
@@ -356,21 +364,55 @@ Pull Requests or PRs are a GitHub feature to facilitate merging repositories tog
 Git Branches {.smaller}
 ------------
 
-Every Git repository consists of one or more **branches**. By default, the first branch Git creates is the **master** branch\*, but a repo may consist of any number of branches, each of which may have a completely different history of commits. Consider the following diagram:
+Every Git repository consists of one or more **branches**. If you recall from the **Configuring Git** section of the tutorial, we configured Git to use **main** as the default branch name, but a repo may consist of any number of branches, each of which may have a completely different history of commits. Consider the following diagram:
 
  ![](img/branchflowchart.png)
 
-Here, each circle represents a commit. Each arrow points to the next commit in chronological order. The bottom line is the **master** branch, which diverges after the second commit into a *parallel* set of commits under the branch name **bugfix**. Notice how, after the second **bugfix** commit, the last arrow, labelled **Pull Request**, points to the last commit of the **master** branch, indicating that the two branches have converged back into a single branch containing the commits from *both* branches. 
-
-<font size = "3">*\*More recent versions of Git have changed the default branch to main, which is also the default branch on GitHub. Depending on when you installed Git, the repo you created earlier may be labelled main instead of master.*</font>
+Here, each circle represents a commit. Each arrow points to the next commit in chronological order. The bottom line is the **main** branch, which diverges after the second commit into a *parallel* set of commits under the branch name **bugfix**. Notice how, after the second **bugfix** commit, the last arrow, labelled **Pull Request**, points to the last commit of the **main** branch, indicating that the two branches have converged back into a single branch containing the commits from *both* branches. 
 
 ## Git Branches
 
-This merging functionality also applies when merging together two **master** branches, which happens when two people are working on separate copies of the same repo, as in this diagram:
+This merging functionality also applies when merging together two **main** branches, which happens when two people are working on separate copies of the same repo, as in this diagram:
 
  ![](img/branchflowchart2.png)
 
-Here, there are two master branches: the original, created by Victor, and another, created by Jacob after the third commit. As before, we can use a Pull Request to merge together the two branches.
+Here, there are two **main** branches: the original, created by Victor, and another created by Jacob after the third commit. As before, we can use a Pull Request to merge together the two branches.
+
+Working with Branches in Git Bash
+-----------------------------------
+
+Before we dive into Pull Requests, let's briefly demonstrate how branching works in Git via the command line. Creating a branch from the Git command line involves only two commands:
+
+```sh
+git branch bugfix
+git checkout bugfix
+```
+
+The `git branch` command creates a new branch called **bugfix**, which is an exact copy of the **main** branch, and the `git checkout` command switches over to the **bugfix** branch. Now, any commits we make on **bugfix** will be completely isolated from **main**, and vice versa, leading to the parallel commit histories we saw in the diagrams.
+
+## Working with Branches in Git Bash {.smaller}
+
+Let's edit our `readme.txt` file again by adding the line below:
+
+```sh
+This is a bugfix.
+```
+
+As always, `git add` and `git commit` your file, then open up another Git Bash window in your repo folder and enter in `git checkout main`. Try typing in `git log` in both instances of Git Bash. Comparing the output of the two should show that the **bugfix** window lists the commit you just made, but the **main** window does not.
+
+![](img/gitbranchcomparison.png)
+
+To merge these divergent branches together, we can use the command `git merge`. 
+
+```sh
+git merge main bugfix
+```
+
+Now if we use `git log` in our **main** branch window, the commit histories will be identical.
+
+![](img/gitbranchcomparisonmerged.png)
+
+We have now learned the basics of creating and merging branches in Git Bash, and we can spend the rest of the tutorial learning how to accomplish the same thing using Pull Requests on GitHub.
 
 Creating Pull Requests
 ----------------------
@@ -401,7 +443,7 @@ Now if we go back to our main repo page, we should see a new pop-up at the top l
 
 ![githubopenpullrequest](img/githubopenpullrequest.png)
 
-Clicking on this will take you to GitHub's Pull Request page. You can enter a name for your pull request in the first textbox and add comments in the second one, if you'd like. Also note that, like the `git diff` command we used earlier, GitHub shows us exactly which lines changed between the **main** branch version of our `readme.txt` file and the **mybranch** version of the file.
+Clicking on this will take you to GitHub's Pull Request page. You can enter a name for your pull request in the first textbox and add comments in the second one, if you'd like. Also note that, like the `git diff` command we used earlier, GitHub shows us exactly which lines changed between the **main** branch version of our `readme.txt` file and the **test** version of the file.
 
 ![githubpullrequestpage](img/githubpullrequestpage.png)
 
@@ -414,7 +456,7 @@ The final step in the Pull Request process is to merge the two branches. GitHub'
 
 ![mergepullrequest](img/mergepullrequest.png)
 
-Since the changes we made are small and conflict-free, as GitHub helpfully points out, we can simply click the **Merge pull request button** to run the merge. The page will then update, marking the Pull request as **Merged**. Now that we've merged in our changes, feel free to delete **mybranch**.
+Since the changes we made are small and conflict-free, as GitHub helpfully points out, we can simply click the **Merge pull request button** to run the merge. The page will then update, marking the Pull request as **Merged**. Now that we've merged in our changes, feel free to delete **test**.
 
 ![pullrequestmerged](img/pullrequestmerged.png)
 
