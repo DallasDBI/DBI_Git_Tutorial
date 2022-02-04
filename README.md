@@ -661,3 +661,5 @@ DBI members using Git/GitHub.
 -   [Git Cheatsheets](https://training.github.com/)
 -   [Git Bash
     Tutorial](https://www.atlassian.com/git/tutorials/git-bash)
+-   [Git Cheat
+    Sheet](https://education.github.com/git-cheat-sheet-education.pdf)
