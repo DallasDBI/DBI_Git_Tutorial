@@ -225,7 +225,7 @@ Just like before, run the commands `git add readme.txt` and `git commit` in Git 
 Browsing commit histories
 -------------------------
 
-To view commits for a given repo, use the command `git log`. For each of the commits you just created, Git will print your name as you entered in Part 1, along with the date of the commit and the commit message. The long string of numbers and letters in the first line is a unique identifier for each commit, and can be used for more advanced Git management not covered in this tutorial.
+To view commits for a given repo, use the command `git log`. For each of the commits you just created, Git will print your name as you entered in Part 1, along with the date of the commit and the commit message. The long string of numbers and letters in the first line is a unique identifier for each commit, and can be used for more advanced Git management not covered in this tutorial. To exit out of git log, simply type `q` into the prompt. 
 
 ![gitlog](img/gitlog.png)
 
@@ -398,7 +398,7 @@ Let's edit our `readme.txt` file again by adding the line below:
 This is a bugfix.
 ```
 
-As always, `git add` and `git commit` your file, then open up another Git Bash window in your repo folder and enter in `git checkout main`. Try typing in `git log` in both instances of Git Bash. Comparing the output of the two should show that the **bugfix** window lists the commit you just made, but the **main** window does not.
+As always, `git add` and `git commit` your file. Type in `git log` and take note of the output. When you are ready, hit `q` to exit the log page and now enter `git checkout main`, then run `git log` again. Comparing the output of the two should show that the **bugfix** log lists the commit you just made, but the **main** log does not.
 
 ![](img/gitbranchcomparison.png)
 
@@ -408,7 +408,7 @@ To merge these divergent branches together, we can use the command `git merge`.
 git merge main bugfix
 ```
 
-Now if we use `git log` in our **main** branch window, the commit histories will be identical.
+Now if we use `git log` on our **main** branch, the commit histories will be identical.
 
 ![](img/gitbranchcomparisonmerged.png)
 
