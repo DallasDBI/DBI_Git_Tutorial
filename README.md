@@ -3,7 +3,7 @@ DBI Git Tutorial
 
 ## Agenda
 
-The purpose of this training is to provide DBI members with a brief
+[](url)The purpose of this training is to provide DBI members with a brief
 introduction to Git and GitHub. Upon completion of this training,
 trainees should be broadly familiar with each of the following concepts:
 
@@ -77,7 +77,7 @@ and typing **Git Bash** into the search bar.
 
 ![startmenu](img/startmenu.png)
 
-Git Bash is a way of interacting with your computer by typing in
+
 commands or the names of programs, rather than clicking around the
 desktop. Most of the commands we will use today begin with the word
 `git`, but there are a number of other commands that you may find useful
@@ -114,7 +114,7 @@ from time to time:
     folders:
 
     ``` sh
-    mv chart.jpg line_chart.jpg 
+    v chart.jpg line_chart.jpg 
     mv /c/Users/[YOUR.NAME]/Documents/report.txt /c/Users[YOUR.NAME]/Pictures/
     ```
 
@@ -232,7 +232,7 @@ see the message `No commits yet` somewhere in the prompt, as well as the
 
 Tracking files within git requires two separate steps: *staging* and
 *committing*. The *staging* step allows us to select which specific
-files or changes we want to include in a given snapshot, which can be
+files r changes we want to include in a given snapshot, which can be
 helpful when we are working on multiple files at once but only wish to
 track changes in a subset of them. Once we have staged all the files we
 wish to include in our snapshot, we can *commit* them to Git’s history,
@@ -344,7 +344,7 @@ When asked to `Enter file in which to save the key`, simply hit enter
 again. You may optionally enter in a passphrase into the next prompt, or
 simply hit enter twice to move on. If you choose to use a passphrase,
 you will need to enter this passphrase anytime you interact with GitHub
-from Git Bash. Refer to GitHub’s [SSH
+from G. Refer to GitHub’s [SSH
 documentation](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/working-with-ssh-key-passphrases)
 pages for details and workarounds.
 
@@ -531,7 +531,7 @@ copies of the same repo, as in this diagram:
 
 ![](img/branchflowchart2.png)
 
-Here, there are two **main** branches: the original, created by Victor,
+Here,  are two **main** branches: the original, created by Victor,
 and another created by Jacob after the third commit. As before, we can
 use a Pull Request to merge together the two branches.
 
@@ -660,7 +660,7 @@ DBI members using Git/GitHub.
 -   [Pro Git](https://git-scm.com/book/en/v2)
 -   [GitHub Docs](https://docs.github.com/en)
 -   [Git Cheatsheets](https://training.github.com/)
--   [Git Bash
+-   [G Bash
     Tutorial](https://www.atlassian.com/git/tutorials/git-bash)
 -   [Git Cheat
     Sheet](https://education.github.com/git-cheat-sheet-education.pdf)
